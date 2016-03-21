@@ -1,15 +1,12 @@
 // MODULE
 //Name of module goes in [], as seen below. For example ['ngMessages', 'ngMaps', 'etc']
-var myApp = angular.module('myApp',['ngMessages']);
+var myApp = angular.module('myApp',['ngMessages','ngResource']);
 
 // CONTROLLERS
-myApp.controller('mainController', function($scope, $log, $filter) {
+myApp.controller('mainController', function($scope, $log, $filter, $resource) {
 
-	$scope.name ='John';
-	$scope.formattedname = $filter('uppercase')($scope.name);
+		console.log($resource);
 
-	$log.info($scope.name);
-	$log.info($scope.formattedname);
 });
 
 
