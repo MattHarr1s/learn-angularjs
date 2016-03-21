@@ -3,7 +3,7 @@
 var myApp = angular.module('myApp',[]);
 
 // CONTROLLERS
-myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+myApp.controller('mainController', ['$scope', '$filter', '$timeout', function($scope, $filter, $timeout) {
 
 	$scope.handle = '';
 
@@ -11,11 +11,7 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
 		return $filter('lowercase')($scope.handle);
 	};
 
-	$scope.$watch('handle', function(newValue, oldValue){
-		console.info('Changed!');
-		console.log('Old:' + oldValue);
-		console.log('New:' + newValue);
-	});
+	$scope.characters = 5;
 
 }]);
 
