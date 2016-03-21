@@ -13,6 +13,17 @@ myApp.controller('mainController', ['$scope', '$filter', '$timeout', function($s
 
 	$scope.characters = 5;
 
+	$scope.rules =[
+
+		{ rulename: "Must be 5 characters" },
+		{ rulename: "Must not be used elsewhere" },
+		{ rulename: "Must ce cool"  }
+
+	];
+
+	console.log($scope.rules);
+
+
 }]);
 
 
