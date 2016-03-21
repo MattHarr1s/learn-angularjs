@@ -2,12 +2,12 @@
 var myApp = angular.module('myApp',[]);
 
 // CONTROLLERS
-myApp.controller('mainController', function($scope) {
-	console.log($scope);
+myApp.controller('mainController', function($scope,$log, $filter) {
+
+	$log.log("Hello.");
+	$log.info("This is some information.");
+	$log.warn("Warning!");
+	$log.error("This was an Error!");
 });
 
-var searchPeople = function searchPeople(firstName, lastName, height, age, occupation){
-	return 'Jane Doe';
-};
 
-console.log(angular.injector().annotate(searchPeople));
