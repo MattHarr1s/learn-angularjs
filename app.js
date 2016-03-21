@@ -3,12 +3,9 @@
 var myApp = angular.module('myApp',[]);
 
 // CONTROLLERS
-myApp.controller('mainController', ['$scope','$timeout', function($scope, $timeout) {
+myApp.controller('mainController', ['$scope', function($scope) {
 
-		$scope.name='Tony';
-	$timeout(function(){
-		$scope.name = 'Everybody';
-	}, 3000);
+	$scope.handle = '';
 
 }]);
 
