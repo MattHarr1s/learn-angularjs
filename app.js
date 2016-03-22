@@ -3,7 +3,7 @@
 var myApp = angular.module('myApp',[]);
 
 // CONTROLLERS
-myApp.controller('mainController', ['$scope', '$filter', '$timeout', function($scope, $filter, $timeout) {
+myApp.controller('mainController', ['$scope', '$filter', '$http', function($scope, $filter, $http) {
 
 	$scope.handle = '';
 
@@ -13,16 +13,15 @@ myApp.controller('mainController', ['$scope', '$filter', '$timeout', function($s
 
 	$scope.characters = 5;
 
-	$scope.rules =[
+	$http.get('/api')
+		.success(function(result){
+			$scope.rules = result;
 
-		{ rulename: "Must be 5 characters" },
-		{ rulename: "Must not be used elsewhere" },
-		{ rulename: "Must ce cool"  }
+		})
+		.error(fucntion(data, status){
 
-	];
-
-	console.log($scope.rules);
-
+		console.log(data);
+	})
 
 }]);
 
